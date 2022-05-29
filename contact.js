@@ -1,9 +1,15 @@
 let contacts = [];
 
-function add(name, lastname){
+function add(name, lastname, telefono, cuidad, direccion){
     contacts.push({
+        "id": contacts.length +1,
         "name": name,
-        "lastname": lastname
+        "lastname": lastname,
+        "phone": telefono,
+        "location": {
+            "cit": cuidad,
+            "direction": direccion
+        }
     });
 }
 
@@ -28,9 +34,8 @@ function toString(){
 }
 
 
-
-add("Hernan", "123");
-add("David", "132");
-
+add("Hernan", "Alvarado", 123, "Tasco", "Calle 6 #5-48");
+add("David", "Parra", 456, "Bogota", "Carrera 7b #138-68");
+contacts.forEach(x => console.log(x));
 
 
